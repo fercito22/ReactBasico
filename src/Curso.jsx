@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const imagenDefecto = "https://thumbs.dreamstime.com/z/deuda-borrada-12160997.jpg"
+//const imagenDefecto = "https://thumbs.dreamstime.com/z/deuda-borrada-12160997.jpg"
 const Curso = ({title, imagen, price, profesor}) => (
     <article className="card">
         
@@ -26,7 +26,7 @@ const Curso = ({title, imagen, price, profesor}) => (
     </div>
     
     <div className="s-main-center">        
-        <a className="button--ghost-alert button--tiny" href="#">{`${price} $us`}</a>
+        <a className="button--ghost-alert button--tiny" href="https://ed.team">{`${price} $us`}</a>
     </div>
   </div>
 </article>

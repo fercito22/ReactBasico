@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react';
+//import React, { Fragment } from 'react';
+import React  from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 import "./styles/styles.scss"
-import Curso from './Curso'
+//import Curso from './Curso'
 import Banner from "./Banner"
 import Formulario from "./Formulario"
-import CourseGrid from './CourseGrid';
+import CourseGrid from './CourseGrid'
+import Course from './Course'
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 const App = () => (
@@ -17,8 +20,10 @@ const App = () => (
       <Formulario name="Formulario EDTeam"/>
       <CourseGrid /> */}
       <Route path="/" exact component={Banner} />
+      {/* <Route path="/cursos/:id" component={ Course } />  
+      <Route path="/cursos" component={ CourseGrid } />  */}
+      <Route path="/cursos/:id" component={Course} />
       <Route path="/cursos" component={CourseGrid} />
-      <Route path="/cursos/ :id" component={Course} />
       {/* coolback ()  */}
       <Route path="/formulario" component={() => <Formulario name="Pagina de Contacto." />} />
       <Route component={() => (

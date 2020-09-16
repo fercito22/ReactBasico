@@ -1,5 +1,5 @@
 //import React, { Fragment } from 'react';
-import React  from 'react';
+import React from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 import "./styles/styles.scss"
@@ -10,12 +10,14 @@ import CourseGrid from './CourseGrid'
 import Course from './Course'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import MainMenu from './MainMenu';
+import Historial from './Historial';
 
 const App = () => (
   // <Fragment>    
   <Router>
+    <MainMenu />
     <Switch>
-
       {/* <Banner />
       <Formulario name="Formulario EDTeam"/>
       <CourseGrid /> */}
@@ -24,6 +26,7 @@ const App = () => (
       <Route path="/cursos" component={ CourseGrid } />  */}
       <Route path="/cursos/:id" component={Course} />
       <Route path="/cursos" component={CourseGrid} />
+      <Route path="/historial" component={Historial} />
       {/* coolback ()  */}
       <Route path="/formulario" component={() => <Formulario name="Pagina de Contacto." />} />
       <Route component={() => (

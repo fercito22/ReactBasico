@@ -8,7 +8,7 @@ const Banner =() =>(
         <div className="main-banner__data s-center">
           <p className="t2 s-mb-0">Título del banner</p>
           <p> Subtítulo del banner</p>
-          <a href="#" className="button">Suscribirse</a>
+          <a href="/" className="button">Suscribirse</a>
         </div>
       </div>
     </div>

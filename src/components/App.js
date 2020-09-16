@@ -2,16 +2,18 @@
 import React from 'react';
 //import logo from './logo.svg';
 //import './App.css';
-import "./styles/styles.scss"
+import "../styles/styles.scss"
 //import Curso from './Curso'
-import Banner from "./Banner"
-import Form from "./Form"
-import CourseGrid from './CourseGrid'
-import Course from './Course'
-
+//import Banner from "../Banner"
+import Home from './Pages/Home'
+import Course from './Pages/Course'
+import Form from "./Pages/Form"
+import History from './Pages/History';
+import CourseGrid from './Organisms/CourseGrid'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import MainMenu from './MainMenu';
-import History from './History';
+import MainMenu from '../MainMenu';
+
+
 
 const App = () => (
   // <Fragment>    
@@ -21,7 +23,7 @@ const App = () => (
       {/* <Banner />
       <Formulario name="Formulario EDTeam"/>
       <CourseGrid /> */}
-      <Route path="/" exact component={Banner} />
+      <Route path="/" exact component={Home} />
       {/* <Route path="/cursos/:id" component={ Course } />  
       <Route path="/cursos" component={ CourseGrid } />  */}
       <Route path="/cursos/:id" component={Course} />

@@ -5,13 +5,13 @@ import React from 'react';
 import "./styles/styles.scss"
 //import Curso from './Curso'
 import Banner from "./Banner"
-import Formulario from "./Formulario"
+import Form from "./Form"
 import CourseGrid from './CourseGrid'
 import Course from './Course'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import MainMenu from './MainMenu';
-import Historial from './Historial';
+import History from './History';
 
 const App = () => (
   // <Fragment>    
@@ -26,9 +26,9 @@ const App = () => (
       <Route path="/cursos" component={ CourseGrid } />  */}
       <Route path="/cursos/:id" component={Course} />
       <Route path="/cursos" component={CourseGrid} />
-      <Route path="/historial" component={Historial} />
+      <Route path="/history" component={History} />
       {/* coolback ()  */}
-      <Route path="/formulario" component={() => <Formulario name="Pagina de Contacto." />} />
+      <Route path="/form" component={() => <Form name="Pagina de Contacto." />} />
       <Route component={() => (
         <div className="ed-grid">
           <h1>Error 404</h1>

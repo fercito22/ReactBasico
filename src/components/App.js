@@ -11,7 +11,8 @@ import Form from "./Pages/Form"
 import History from './Pages/History';
 import CourseGrid from './Organisms/CourseGrid'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import MainMenu from '../MainMenu';
+import MainMenu from './Organisms/MainMenu';
+import Users from './Pages/Users';
 
 
 
@@ -29,6 +30,7 @@ const App = () => (
       <Route path="/cursos/:id" component={Course} />
       <Route path="/cursos" component={CourseGrid} />
       <Route path="/history" component={History} />
+      <Route path="/usuarios" component={Users} />
       {/* coolback ()  */}
       <Route path="/form" component={() => <Form name="Pagina de Contacto." />} />
       <Route component={() => (

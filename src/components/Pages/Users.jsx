@@ -1,5 +1,7 @@
+import Axios from "axios"
 import React, { Component } from "react"
 import USerCard from "../Molecules/UserCard"
+import UsersGrid from "../Organisms/UsersGrid"
 
 class Users extends Component {
 
@@ -24,42 +26,34 @@ class Users extends Component {
     //     // })
     // }
 
-    componentDidMount(){        
-        fetch('https://randomuser.me/api/?results=25', {method: 'get'})        
-        .then( response => response.json())
-        //.then( response2 => console.log(response2.results))
-        //.then( response2 => console.log(response2))  
-        .then( response2 => {
+    // segundo
+    // componentDidMount(){        
+    //     fetch('https://randomuser.me/api/?results=25', {method: 'get'})        
+    //     .then( response => response.json())
+    //     //.then( response2 => console.log(response2.results))
+    //     //.then( response2 => console.log(response2))  
+    //     .then( response2 => {
+    //         this.setState({
+    //             users: response2.results
+    //         })
+    //     })
+    // }
+
+    // CON AXIOS
+    componentDidMount(){
+        Axios.get('https://randomuser.me/api/?results=25')
+        .then(respuesta => {
             this.setState({
-                users: response2.results
+                users: respuesta.data.results
             })
         })
+        //.then(resp => console.log(resp))
     }
 
     render(){
         const { users } = this.state
         return(
-            <div className="ed-grid">
-                <h1>Usuarios</h1>
-                <div className="ed-grid s-grid-2 m-grid-3 l-grid-4">
-                    {
-                        users.map(u => ( 
-                            <USerCard 
-                                key={u.phone} 
-                                name={u.name.title + " " + u.name.first +" " + u.name.last} 
-                                username={u.login.username} 
-                                email={u.email} 
-                                foto={u.picture.medium} 
-                                ciudad={u.location.city}
-                                pais={u.location.country}
-                                telefono={u.phone}
-                                edad={u.dob.age}
-                                                                
-                                />
-                                ))
-                    }                    
-                </div>
-            </div>
+            <UsersGrid users={users} />
         )
     }
 }

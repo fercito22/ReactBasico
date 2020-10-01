@@ -14,6 +14,10 @@ import History from './Pages/History';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import MainMenu from './Organisms/MainMenu';
 import Users from './Pages/Users';
+import Private from './Bonus/Private';
+import Public from './Bonus/Public';
+import SquareFile from './Bonus/SquareFile';
+import CircleFiles from './Bonus/CircleFiles';
 
 
 
@@ -32,6 +36,11 @@ const App = () => (
       <Route path="/cursos" component={Courses} />
       <Route path="/history" component={History} />
       <Route path="/usuarios" component={Users} />
+      <Route path="/private" component={Private} />
+      <Route path="/publica" component={Public} />
+      <Route path="/cuadradoFile" component={SquareFile} />
+      <Route path="/circuloFile" component={CircleFiles} />
+      
       {/* coolback ()  */}
       <Route path="/form" component={() => <Form name="Pagina de Contacto." />} />
       <Route component={() => (
